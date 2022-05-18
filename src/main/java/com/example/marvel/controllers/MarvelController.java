@@ -1,5 +1,4 @@
 package com.example.marvel.controllers;
-import com.example.marvel.models.MarvelCharacter;
 import com.example.marvel.services.MarvelCharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

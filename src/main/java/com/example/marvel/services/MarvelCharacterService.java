@@ -1,6 +1,4 @@
 package com.example.marvel.services;
-
-
 import com.example.marvel.models.MarvelCharacter;
 import com.example.marvel.utilities.JSONUtils;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -11,14 +9,7 @@ import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.stream.Collectors;
 
 @Service
 public class MarvelCharacterService {
