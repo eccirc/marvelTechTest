@@ -1,7 +1,4 @@
 package com.example.marvel.models;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.util.HashMap;
 import java.util.Map;
 

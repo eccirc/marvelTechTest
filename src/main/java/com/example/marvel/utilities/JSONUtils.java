@@ -1,6 +1,5 @@
 package com.example.marvel.utilities;
 
-import com.example.marvel.models.MarvelCharacter;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,7 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
+
 
 public class JSONUtils {
     private static ObjectMapper mapper = new ObjectMapper();

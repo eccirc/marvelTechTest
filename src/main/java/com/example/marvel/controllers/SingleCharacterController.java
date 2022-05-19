@@ -18,7 +18,7 @@ public class SingleCharacterController {
     @GetMapping("characters/{id}")
     private ResponseEntity<Object> singleCharacter(@PathVariable Integer id){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(service.getSingleCharacterFromAPI(id));
+            return ResponseEntity.status(HttpStatus.OK).header( "Attribution:", "Data provided by Marvel. © 2014 Marvel").body(service.getSingleCharacterFromAPI(id));
         } catch (Error e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Resource not found, check your credentials.");
         }
@@ -26,6 +26,12 @@ public class SingleCharacterController {
 
     @GetMapping("characters/{id}/{lang}")
     private ResponseEntity<Object> translatedCharacter(@PathVariable Integer id, @PathVariable String lang){
-        return ResponseEntity.status(HttpStatus.OK).body(service.MarvelCharacterTranslated(id, lang));
+        try {
+            return ResponseEntity.status(HttpStatus.OK).header( "Attribution:", "Data provided by Marvel. © 2014 Marvel").body(service.MarvelCharacterTranslated(id, lang));
+
+        } catch (Error e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Resource not found, check your credentials, or that you have used a valid country code." +
+                    "See https://www.iban.com/country-codes for details.");
+        }
     }
 }
