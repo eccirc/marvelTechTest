@@ -14,6 +14,7 @@ Via different API endpoint, one can access:
   **/characters/{id}**
 - The same as above but with the description translated to a language of your choice
 (specified in the URL path):   **/characters/{id}/{lang}**
+ *See [here](https://www.labnol.org/code/19899-google-translate-languages) for a list of language codes*
 
 ## Technologies
 

@@ -1,0 +1,101 @@
+openapi: 3.1.0
+info:
+  title: Marvel Characters API
+  version: '1.0'
+  summary: Leverages the official Marvel API to return formatted character information
+  description: 'Get a list of all Marvel character ID''s, a single character or, a single character with their description translated to a language of your choice. Built using Spring Boot, using the official Marvel API and Google Translate.'
+  contact:
+    name: David Williams
+    url: www.github.com/eccirc
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /characters:
+    parameters: []
+    get:
+      summary: Get Marvel Character ID's
+      operationId: get-characters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      description: Returns a list of 1500 character ID's
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Attribution
+          description: Data provided by Marvel. © 2014 Marvel
+      tags:
+        - Marvel
+  '/characters/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Get a single Marvel Character
+      tags:
+        - Marvel
+      responses:
+        '200':
+          description: OK
+      operationId: get-characters-id
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Attribution
+          description: Data provided by Marvel. © 2014 Marvel
+      description: Return formatted information about a single Marvel character.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+  '/characters/{id}/{lang}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: ID of given Marvel character
+      - schema:
+          type: string
+        name: lang
+        in: path
+        required: true
+        description: ISO Country code (2-digit)
+    get:
+      summary: Get a single Marvel Character - description translated
+      operationId: get-characters-id-lang
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Attribution
+          description: Data provided by Marvel. © 2014 Marvel
+      description: Return formatted information about a single Marvel character with the description translated into another language.
+      tags:
+        - Marvel
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+components:
+  schemas: {}
+tags:
+  - name: Marvel
