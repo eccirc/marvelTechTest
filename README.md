@@ -1,9 +1,6 @@
 # Marvel Characters API
-**Author** David Williams
 
-**Date** May 2022
-
-**Last Updated** May 2022
+---
 
 ## About
 
@@ -20,14 +17,34 @@ Via different API endpoint, one can access:
 
 **Java**, **Spring Boot**, **Googgle Cloud API's (Translate)**
 
+---
+
+### To Run / use
+
+- Clone down this repo and build with Maven
+- Package with Maven (e.g in IntelliJ navigate to Maven / Execute Maven Goal / mvn package)
+- In your terminal of choice, navigate to the build directory  - ``cd /marvelTechTest/target``
+- Run ``java -jar demo-0.0.1-SNAPSHOT.jar`` (Ensuring you have Java 11+ SDK's installed on your machine first)
+- Try the test URL to confirm that the API is working: ``curl http://localhost:8080/test``
+- *Optionally* import MarvelApiRef.yml into a programme like Postman to try all of the available endpoints from there.
+
+---
+
 ## Credits / Attributions
 
 **Marvel API**
 - Marvel character info from the official [Marvel API](https://developer.marvel.com/) ( © 2014 Marvel)
-- 
+
 **Google**
 - Google Cloud [Translation AI](https://cloud.google.com/translate)
 
-## 
+---
+
+**Author** David Williams
+
+**Date** May 2022
+
+**Last Updated** May 2022
+
 
 

@@ -6,12 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @Value("${app.publicKey}")
-    String pk;
-
     @GetMapping("/test")
     private String test() {
-        return ("Hello Marvel fans!" + pk);
+        return ("Hello Marvel fans!");
     }
 
 
