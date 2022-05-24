@@ -17,7 +17,9 @@ public class CharacterCodeController {
     @GetMapping("/characters")
     private ResponseEntity<Object> characterCodes(){
         try{
-            return ResponseEntity.status(HttpStatus.OK).header( "Attribution:", "Data provided by Marvel. © 2014 Marvel").body(service.getCharacterCodes());
+            return ResponseEntity.status(HttpStatus.OK)
+                    .header( "Attribution:", "Data provided by Marvel. © 2014 Marvel")
+                    .body(service.getCharacterCodes());
         } catch (Error e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error fetching resource");
         }

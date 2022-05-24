@@ -1,4 +1,4 @@
-package com.example.marvel.services;
+package com.example.marvel.utilities;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.cloud.translate.*;
 import org.springframework.beans.factory.annotation.Value;
